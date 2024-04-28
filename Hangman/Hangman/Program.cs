@@ -31,15 +31,13 @@ namespace WordChain
 
         private static void StartGame()
         {
-            string a = "", b = "";
-            bool turn = false;
             string json = File.ReadAllText("animals.json"); // json 불러오는거
             List<string> animals = JsonConvert.DeserializeObject<List<string>>(json);
             List<string> shortWords = animals.Where(word => word.Length >= 5 && word.Length <= 10).ToList();
             Random rand = new Random();
-            string randTopic = shortWords[rand.Next(0, shortWords.Count)];
+            string randTopic = shortWords[rand.Next(0, shortWords.Count)].ToLower();
             char[] word = new char[randTopic.Length];
-            int tryCount = randTopic.Length + 5;
+            int tryCount = randTopic.Length + 6;
 
             for (int i = 0; i < randTopic.Length; i++)
             {
@@ -48,75 +46,48 @@ namespace WordChain
 
             while (true)
             {
+                //Console.WriteLine($"[ 답: {randTopic} ]");
                 Console.WriteLine($"[ 남은 기회: {tryCount} ]");
                 if (tryCount == 0)
                 {
                     Console.WriteLine($"Draw! 정답은 {randTopic}입니다!");
                     break;
                 }
-                if (!turn)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write(">> 유수정: ");
-                    Console.ResetColor();
-                    a = Console.ReadLine();
 
-                    if (a.Length == 1)
-                    {
-                        if (randTopic.Contains(a))
-                        {
-                            Console.WriteLine($"이 단어에는 {a} 스펠링이 존재해");
-                            for (int i = 0; i < randTopic.Length; i++)
-                            {
-                                if (randTopic[i] == a[0])
-                                {
-                                    word[i] = a[0];
-                                }
-                            }
-                        }
-                        else Console.WriteLine($"이 단어에는 {a} 스펠링이 존재하지않아...");
-                    }
-                    else if (a == randTopic)
-                    {
-                        Console.WriteLine("유수정 승!");
-                        return;
-                    }
-                    turn = true;
-                    tryCount--;
-                    WordWrite(word);
-                    Console.WriteLine();
-                }
-                else
+                string playerName = (tryCount % 2 == 0) ? "Blue" : "Red";
+                ConsoleColor playerColor = (tryCount % 2 == 0) ? ConsoleColor.Blue : ConsoleColor.Red;
+                Console.ForegroundColor = playerColor;
+                Console.Write($">> {playerName}: ");
+                Console.ResetColor();
+                string input = Console.ReadLine().ToLower(); // 입력된 문자열을 소문자로 변환하여 저장
+
+                if (input.Length == 1)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(">> 짝퉁 유수정: ");
-                    Console.ResetColor();
-                    b = Console.ReadLine();
-                    if (b.Length == 1)
+                    bool includedCheck = randTopic.Contains(input);
+                    Console.WriteLine($"이 단어에는 {input} 스펠링이 {(includedCheck ? "존재해" : "존재하지 않아...")}");
+
+                    for (int i = 0; i < randTopic.Length; i++)
                     {
-                        if (randTopic.Contains(b))
+                        if (randTopic[i] == input[0])
                         {
-                            Console.WriteLine($"이 단어에는 {b} 스펠링이 존재해");
-                            for (int i = 0; i < randTopic.Length; i++)
+                            word[i] = input[0];
+                            if(Array.IndexOf(word, '_') == -1)
                             {
-                                if (randTopic[i] == b[0])
-                                {
-                                    word[i] = b[0];
-                                }
+                                Console.WriteLine($"{playerName} 승!");
+                                return;
                             }
                         }
-                        else Console.WriteLine($"이 단어에는 {b} 스펠링이 존재하지않아...");
                     }
-                    else if (b == randTopic)
-                    {
-                        Console.WriteLine("짝퉁 유수정 승!");
-                        return;
-                    }
-                    turn = false;
-                    tryCount--;
-                    WordWrite(word);
-                    Console.WriteLine();
                 }
+                else if (input == randTopic)
+                {
+                    Console.WriteLine($"{playerName} 승!");
+                    return;
+                }
+
+                tryCount--;
+                WordWrite(word);
+                Console.WriteLine();
             }
         }
 
