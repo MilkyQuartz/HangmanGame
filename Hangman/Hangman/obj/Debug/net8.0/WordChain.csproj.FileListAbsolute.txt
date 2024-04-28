@@ -1,0 +1,14 @@
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\bin\Debug\net8.0\WordChain.exe
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\bin\Debug\net8.0\WordChain.deps.json
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\bin\Debug\net8.0\WordChain.runtimeconfig.json
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\bin\Debug\net8.0\WordChain.dll
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\bin\Debug\net8.0\WordChain.pdb
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.AssemblyInfoInputs.cache
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.AssemblyInfo.cs
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.csproj.CoreCompileInputs.cache
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.dll
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\refint\WordChain.dll
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.pdb
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\WordChain.genruntimeconfig.cache
+C:\Users\milky\Desktop\Project\CShape\Myproject\WordChain\WordChain\obj\Debug\net8.0\ref\WordChain.dll
