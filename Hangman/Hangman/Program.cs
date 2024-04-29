@@ -63,6 +63,7 @@ namespace WordChain
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~\n");
             Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"\'살아남기위해 머리를 잘 써보자..! 내가 로판 속 행맨이 되버리다니!'\n");
             Console.WriteLine("[ 게임규칙 ]");
             Console.WriteLine("1. 단어는 모두 동물입니다.\n2. 단어는 5~10 글자로 이루어져 있습니다. \n3. 단어는 랜덤으로 나오며 주어지는 기회는 단어길이의 +5 입니다." +
                 "\n4. 단어는 영어(소문자)로 입력해주세요. \n5. 이사벨라 유니티는 블루팀이며 블루팀이 승리해야합니다. \n6. 승리시 누명을 벗어야만 진짜 범인을 잡을 수 있습니다. \n7. 패배시 스파르타 가문의 몰락과 함께 이사벨라 유니티는 이름마저 지워집니다.\n");
@@ -101,7 +102,7 @@ namespace WordChain
 
             while (true)
             {
-                //Console.WriteLine($"[ 답: {randTopic} ]");
+                Console.WriteLine($"[ 답: {randTopic} ]");
                 Console.WriteLine($"[ 남은 기회: {tryCount} ]");
                 if (tryCount == 0)
                 {
@@ -111,7 +112,7 @@ namespace WordChain
                 else if(tryCount == 3)
                 {
                     Console.WriteLine($"\n\'진짜로 모르겠어... 어떻게하지..? '");
-                    Console.Write($"\n부정부패를 일삼던 가문의 양자 화이선의 발 밑에 찢어진 답지가 보인다. \n귀가 얇으니 누명을 푼 뒤 두둑하게 챙겨준다는 약속으로 조금만 꼬드기면 될지도.....\n");
+                    Console.Write($"\n부정부패를 일삼던 화이선 가문의 양자의 발 밑에 찢어진 답지가 보인다. \n귀가 얇으니 누명을 푼 뒤 두둑하게 챙겨준다는 약속으로 조금만 꼬드기면 될지도.....\n");
                     Console.WriteLine("1. 말을건다.\t2. 참는다.");
                     Console.Write($">> ");
                     string num = Console.ReadLine();
@@ -225,13 +226,52 @@ namespace WordChain
 
         private static void Find_Criminal()
         {
+            Console.Clear();
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine($"~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\n~ 평범한 직장인이였던 내가 차에 치였더니 교수대 위 스파르타 백작가의 외동딸이 되어있다? ~\n");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~\n");
+            Console.WriteLine($"~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~.~");
             Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write($"\n\"..\"\n");
+            Console.ResetColor();
+            Console.Write($">> ");
+            Console.ReadLine();
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write($"\n\"...\"\n");
+            Console.ResetColor();
+            Console.Write($">> ");
+            Console.ReadLine();
+
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            Console.Write($"\n\"..\"\n");
+            Console.ResetColor();
+            Console.Write($">> ");
+            Console.ReadLine();
+
+            Console.WriteLine($"\n\"살.. 았다....\"");
+            Console.Write($">> ");
+            Console.ReadLine();
+
+            Console.WriteLine($"\n내 눈을 마주친 성녀가 뒷걸음을 친다. 몰래 빠져나가려는 모양이다.");
+            Console.Write($">> ");
+            Console.ReadLine();
+
+            Console.WriteLine($"\n\"안돼...\"");
+            Console.Write($">> ");
+            Console.ReadLine();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"\n\"거기서 뿌링클허니콤보스노윙슈프림양념 자바!!!!!\"");
+            Console.ResetColor();
+            Console.Write($">> ");
+            Console.ReadLine();
+
+
         }
 
         private static void Leave_Unity()
